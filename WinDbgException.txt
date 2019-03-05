@@ -1,0 +1,322 @@
+*******************************************************************************
+*                                                                             *
+*                        Exception Analysis                                   *
+*                                                                             *
+*******************************************************************************
+
+
+KEY_VALUES_STRING: 1
+
+    Key  : AV.Fault
+    Value: Read
+
+    Key  : Timeline.OS.Boot.DeltaSec
+    Value: 343361
+
+    Key  : Timeline.Process.Start.DeltaSec
+    Value: 1182
+
+
+PROCESSES_ANALYSIS: 1
+
+SERVICE_ANALYSIS: 1
+
+STACKHASH_ANALYSIS: 1
+
+TIMELINE_ANALYSIS: 1
+
+Timeline: !analyze.Start
+    Name: <blank>
+    Time: 2019-03-05T12:23:17.99Z
+    Diff: 99 mSec
+
+Timeline: Dump.Current
+    Name: <blank>
+    Time: 2019-03-05T12:23:17.0Z
+    Diff: 0 mSec
+
+Timeline: Process.Start
+    Name: <blank>
+    Time: 2019-03-05T12:03:35.0Z
+    Diff: 1182000 mSec
+
+Timeline: OS.Boot
+    Name: <blank>
+    Time: 2019-03-01T13:00:36.0Z
+    Diff: 343361000 mSec
+
+
+DUMP_CLASS: 2
+
+DUMP_QUALIFIER: 0
+
+FAULTING_IP: 
+Windows_UI_Xaml!ctl::ComObject<DirectUI::CustomXamlResourceLoader>::AddRef+f [onecoreuap\windows\dxaml\xcp\components\com\inc\comobject.h @ 83]
+00007ffa`6dd7445f 488b4008        mov     rax,qword ptr [rax+8]
+
+EXCEPTION_RECORD:  (.exr -1)
+ExceptionAddress: 00007ffa6dd7445f (Windows_UI_Xaml!ctl::ComObject<DirectUI::CustomXamlResourceLoader>::AddRef+0x000000000000000f)
+   ExceptionCode: c0000005 (Access violation)
+  ExceptionFlags: 00000000
+NumberParameters: 2
+   Parameter[0]: 0000000000000000
+   Parameter[1]: 0000000400000008
+Attempt to read from address 0000000400000008
+
+FAULTING_THREAD:  00002ac8
+
+PROCESS_NAME:  OperationsCenter.UWP.exe
+
+FOLLOWUP_IP: 
+Windows_UI_Xaml!ctl::ComObject<DirectUI::CustomXamlResourceLoader>::AddRef+f [onecoreuap\windows\dxaml\xcp\components\com\inc\comobject.h @ 83]
+00007ffa`6dd7445f 488b4008        mov     rax,qword ptr [rax+8]
+
+READ_ADDRESS:  0000000400000008 
+
+ERROR_CODE: (NTSTATUS) 0xc0000005 - <Unable to get error code text>
+
+EXCEPTION_CODE: (NTSTATUS) 0xc0000005 - <Unable to get error code text>
+
+EXCEPTION_CODE_STR:  c0000005
+
+EXCEPTION_PARAMETER1:  0000000000000000
+
+EXCEPTION_PARAMETER2:  0000000400000008
+
+WATSON_BKT_PROCSTAMP:  5c6e95ec
+
+WATSON_BKT_PROCVER:  1.0.0.0
+
+PROCESS_VER_PRODUCT:  OperationsCenter.UWP
+
+WATSON_BKT_MODULE:  Windows.UI.Xaml.dll
+
+WATSON_BKT_MODSTAMP:  e6cb46c8
+
+WATSON_BKT_MODOFFSET:  8445f
+
+WATSON_BKT_MODVER:  10.0.16299.785
+
+MODULE_VER_PRODUCT:  Microsoft® Windows® Operating System
+
+BUILD_VERSION_STRING:  16299.637.amd64fre.rs3_release_svc.180808-1748
+
+MODLIST_WITH_TSCHKSUM_HASH:  0d5c59605eeb19896f26c745490a088a9d3ddb8f
+
+MODLIST_SHA1_HASH:  6447fa016325b7c23eda7abf1c8599a1b74b4968
+
+NTGLOBALFLAG:  70
+
+PROCESS_BAM_CURRENT_THROTTLED: 0
+
+PROCESS_BAM_PREVIOUS_THROTTLED: 0
+
+APPLICATION_VERIFIER_FLAGS:  0
+
+PRODUCT_TYPE:  1
+
+SUITE_MASK:  272
+
+DUMP_TYPE:  fe
+
+ANALYSIS_SESSION_HOST:  EMAL20FMC0G4AUK
+
+ANALYSIS_SESSION_TIME:  03-05-2019 13:23:17.0099
+
+ANALYSIS_VERSION: 10.0.18317.1001 amd64fre
+
+MANAGED_CODE: 1
+
+MANAGED_ENGINE_MODULE:  mrt100
+
+MANAGED_ANALYSIS_PROVIDER:  MRT
+
+MANAGED_THREAD_ID: 2ac8
+
+MANAGED_EXCEPTION_ADDRESS: ffffffffffffffff
+
+THREAD_ATTRIBUTES: 
+OS_LOCALE:  PLK
+
+BUGCHECK_STR:  APPLICATION_FAULT_INVALID_POINTER_READ_ONE_BIT
+
+DEFAULT_BUCKET_ID:  INVALID_POINTER_READ_ONE_BIT
+
+PRIMARY_PROBLEM_CLASS:  APPLICATION_FAULT
+
+PROBLEM_CLASSES: 
+
+    ID:     [0n313]
+    Type:   [@ACCESS_VIOLATION]
+    Class:  Addendum
+    Scope:  BUCKET_ID
+    Name:   Omit
+    Data:   Omit
+    PID:    [Unspecified]
+    TID:    [0x2ac8]
+    Frame:  [0] : Windows_UI_Xaml!ctl::ComObject<DirectUI::CustomXamlResourceLoader>::AddRef
+
+    ID:     [0n285]
+    Type:   [INVALID_POINTER_READ]
+    Class:  Primary
+    Scope:  DEFAULT_BUCKET_ID (Failure Bucket ID prefix)
+            BUCKET_ID
+    Name:   Add
+    Data:   Omit
+    PID:    [Unspecified]
+    TID:    [0x2ac8]
+    Frame:  [0] : Windows_UI_Xaml!ctl::ComObject<DirectUI::CustomXamlResourceLoader>::AddRef
+
+    ID:     [0n154]
+    Type:   [ONE_BIT]
+    Class:  Addendum
+    Scope:  DEFAULT_BUCKET_ID (Failure Bucket ID prefix)
+            BUCKET_ID
+    Name:   Add
+    Data:   Omit
+    PID:    [0x29dc]
+    TID:    [0x2ac8]
+    Frame:  [0] : Windows_UI_Xaml!ctl::ComObject<DirectUI::CustomXamlResourceLoader>::AddRef
+
+LAST_CONTROL_TRANSFER:  from 00007ffa6df7ca65 to 00007ffa6dd7445f
+
+STACK_TEXT:  
+00000077`8b6fe4c8 00007ffa`6df7ca65 : 00000243`6971f270 00000000`00000000 00004ed0`01b00030 00000000`00000000 : Windows_UI_Xaml!ctl::ComObject<DirectUI::CustomXamlResourceLoader>::AddRef+0xf
+00000077`8b6fe4d0 00007ffa`6df45a68 : 00000000`00000000 00000243`6971f870 00000243`6966e900 00000077`8b6fe7a0 : Windows_UI_Xaml!CValue::Dispatch<CValueDetails::Handlers::ConvertAndCopy,long,CValue const & __ptr64>+0x3a5
+00000077`8b6fe5f0 00007ffa`6df476cc : 00000000`00000000 00007ffa`8276f458 00000243`6948e230 00000243`6966e8a0 : Windows_UI_Xaml!CDependencyObject::GetSparseValueEntries<320>+0x1b8
+00000077`8b6fe6c0 00007ffa`6df48fea : 00000000`00000001 00000243`6948e230 00000243`6a5cbd80 00000243`698c0d98 : Windows_UI_Xaml!CDependencyObject::ResetReferencesFromSparsePropertyValues+0xbc
+00000077`8b6fe8f0 00007ffa`6e39e565 : 00000000`00000000 00000243`6a5cbd80 00000243`63ce9a30 00000077`8b6fe9c8 : Windows_UI_Xaml!DirectUI::DependencyObject::ClearPeerReferences+0x1aa
+00000077`8b6fe930 00007ffa`6df96fe7 : 00000243`6a5cbe70 00000243`6a5cbd80 000000c2`4466533c 00000000`00000000 : Windows_UI_Xaml!DirectUI::DependencyObject::Deinitialize+0x35
+00000077`8b6fe960 00007ffa`6e3c8fde : 00000000`00000004 00000000`00000000 00000077`8b6fea50 00000243`63ce9a30 : Windows_UI_Xaml!DirectUI::UIAffinityReleaseQueue::DoCleanup+0xd7
+00000077`8b6fea10 00007ffa`6deeeb4d : 00007ffa`6deedd20 00000243`63cc1ef8 00000000`00000001 00000000`00000000 : Windows_UI_Xaml!DirectUI::UIAffinityReleaseQueue::BuildTree+0x1e
+00000077`8b6fea40 00007ffa`6deee6e2 : 00004ed0`b382c200 00000243`63cc1ea0 00000000`00000300 00000243`43bf5700 : Windows_UI_Xaml!DirectUI::BuildTreeService::BuildTrees+0x38d
+00000077`8b6feae0 00007ffa`6de3c956 : 000003f0`00000780 00000243`5cc0d600 00000243`63cc1ea0 000003f0`00000780 : Windows_UI_Xaml!AgCoreCallbacks::FrameworkCallbacks_PhasedWorkDistributor_PerformWork+0xd2
+00000077`8b6feb30 00007ffa`6de41f75 : 00000243`00000001 00000243`5cc18650 00000000`00000000 00000000`10000002 : Windows_UI_Xaml!CCoreServices::NWDrawTree+0x316
+00000077`8b6fece0 00007ffa`6de433ac : 00000243`5cc20640 00000000`00000000 000000c2`44664f6c 00000000`00000000 : Windows_UI_Xaml!CXcpBrowserHost::OnTick+0x235
+00000077`8b6fed60 00007ffa`6de43474 : 00000000`0141dd76 00000243`5cc2069c 00000000`00000000 00007ffa`7fc08f2e : Windows_UI_Xaml!CXcpDispatcher::Tick+0x8c
+00000077`8b6feda0 00007ffa`6de4230f : 00000243`6660be80 00000000`00000402 00000243`5cc20650 00000000`00000000 : Windows_UI_Xaml!CXcpDispatcher::OnReentrancyProtectedWindowMessage+0x54
+00000077`8b6fee00 00007ffa`6de4218c : 00000243`5cc20658 00000000`00000000 00000000`00000000 00000243`5cc20640 : Windows_UI_Xaml!CDeferredInvoke::DispatchQueuedMessage+0x14f
+00000077`8b6fee80 00007ffa`7568eab6 : 00000243`5cc15a00 00007ffa`6de42100 02de000d`0005000c 0000226d`a75b2351 : Windows_UI_Xaml!CXcpDispatcher::MessageTimerCallbackStatic+0x1c
+00000077`8b6feeb0 00007ffa`756a4fb7 : 00000000`00001e15 00000243`5cc18850 00000243`43bff020 00007ffa`7569638b : CoreMessaging!Microsoft__CoreUI__Dispatch__TimeoutHandler$CallbackThunk+0x116
+00000077`8b6fef20 00007ffa`7569598d : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000003 : CoreMessaging!Microsoft::CoreUI::Dispatch::TimeoutManager::Callback_OnDispatch+0x177
+00000077`8b6fefb0 00007ffa`75693ef7 : 00000000`00000002 00000077`8b6ff118 00000243`43d0d590 00000000`00000004 : CoreMessaging!Microsoft::CoreUI::Dispatch::EventLoop::Callback_RunCoreLoop+0x5cd
+00000077`8b6ff0a0 00007ffa`75690709 : 00000243`5cc16b40 00000243`43d13530 00000077`8b6ff580 00000077`8b6ff568 : CoreMessaging!Microsoft::CoreUI::Dispatch::UserAdapter::OnUserDispatch+0x1c7
+00000077`8b6ff170 00007ffa`756904e9 : 00000000`00000001 00000000`001605e6 00000000`00000000 00000000`40000c02 : CoreMessaging!Microsoft::CoreUI::Dispatch::UserAdapter_DoWork+0xf9
+00000077`8b6ff250 00007ffa`7fc0b85d : 00000077`8b6ff4f0 00000000`80000012 00000000`00000001 00000000`80000012 : CoreMessaging!Microsoft::CoreUI::Dispatch::UserAdapter_WindowProc+0x59
+00000077`8b6ff280 00007ffa`7fc0b1ef : 00000243`5e0ed9f0 00007ffa`75690490 00000000`001605e6 00000077`8ac2a800 : user32!UserCallWinProcCheckWow+0x2ad
+00000077`8b6ff3f0 00007ffa`6ee300ae : 00000077`8b6ff4c0 00000243`43d08030 00000000`00000000 00000000`00000000 : user32!DispatchMessageWorker+0x19f
+00000077`8b6ff470 00007ffa`6ee2e25e : 00000000`00000000 00007ffa`00000000 00000000`00000000 00007ffa`6eefe000 : Windows_UI!Windows::UI::Core::CDispatcher::ProcessMessage+0xfe
+00000077`8b6ff520 00007ffa`6ee2ff0b : 00007ffa`6eefe000 00000243`43d08030 00000000`00000000 00000077`00000000 : Windows_UI!Windows::UI::Core::CDispatcher::WaitAndProcessMessagesInternal+0xae
+00000077`8b6ff630 00007ffa`6e06389c : 00000243`43bf5ac0 00000000`00000000 00000000`00000001 00000000`00000000 : Windows_UI!Windows::UI::Core::CDispatcher::ProcessEvents+0x7b
+00000077`8b6ff6e0 00007ffa`6e063840 : 00000243`43d08030 00007ffa`6df4c11e ffffffff`fffffffe 00000000`00000000 : Windows_UI_Xaml!CJupiterWindow::RunCoreWindowMessageLoop+0x4c
+00000077`8b6ff710 00007ffa`7d424e4a : 00000000`00000000 00000243`43d07310 00000077`8b6ff7e0 00000000`00000001 : Windows_UI_Xaml!DirectUI::DXamlCore::RunMessageLoop+0x4c
+00000077`8b6ff780 00007ffa`7d444b5c : 00000243`43d065c0 00000000`00000001 00000000`00000000 00007ffa`7d514b18 : twinapi_appcore!Windows::ApplicationModel::Core::CoreApplicationView::Run+0x3a
+00000077`8b6ff7b0 00007ffa`8052d575 : 00000243`43d06ed0 00000243`43d065c0 00000000`00000000 00000243`43d06ed0 : twinapi_appcore!<lambda_3c558768873f4b5b0b4a338b4722411c>::operator()+0xc4
+00000077`8b6ff820 00007ffa`7fda1fe4 : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : shcore!_WrapperThreadProc+0xf5
+00000077`8b6ff900 00007ffa`8279cb81 : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : KERNEL32!BaseThreadInitThunk+0x14
+00000077`8b6ff930 00000000`00000000 : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ntdll!RtlUserThreadStart+0x21
+
+
+STACK_COMMAND:  ~8s ; .cxr ; kb
+
+THREAD_SHA1_HASH_MOD_FUNC:  56241f957a50b23c8e3dabaf6c2938767dbe4d7b
+
+THREAD_SHA1_HASH_MOD_FUNC_OFFSET:  4efc76ea0e0cb4cd53f79b996c98a50f49552be7
+
+THREAD_SHA1_HASH_MOD:  a9382d5e8a563919899837b07e7b5f4ecf6e0484
+
+FAULT_INSTR_CODE:  8408b48
+
+FAULTING_SOURCE_LINE:  onecoreuap\windows\dxaml\xcp\components\com\inc\comobject.h
+
+FAULTING_SOURCE_FILE:  onecoreuap\windows\dxaml\xcp\components\com\inc\comobject.h
+
+FAULTING_SOURCE_LINE_NUMBER:  83
+
+FAULTING_SOURCE_CODE:  
+No source found for 'onecoreuap\windows\dxaml\xcp\components\com\inc\comobject.h'
+
+
+SYMBOL_STACK_INDEX:  0
+
+SYMBOL_NAME:  Windows_UI_Xaml!ctl::ComObject<DirectUI::CustomXamlResourceLoader>::AddRef+f
+
+FOLLOWUP_NAME:  MachineOwner
+
+MODULE_NAME: Windows_UI_Xaml
+
+IMAGE_NAME:  Windows.UI.Xaml.dll
+
+DEBUG_FLR_IMAGE_TIMESTAMP:  0
+
+FAILURE_BUCKET_ID:  INVALID_POINTER_READ_ONE_BIT_c0000005_Windows.UI.Xaml.dll!ctl::ComObject_DirectUI::CustomXamlResourceLoader_::AddRef
+
+BUCKET_ID:  APPLICATION_FAULT_INVALID_POINTER_READ_ONE_BIT_Windows_UI_Xaml!ctl::ComObject_DirectUI::CustomXamlResourceLoader_::AddRef+f
+
+FAILURE_EXCEPTION_CODE:  c0000005
+
+FAILURE_IMAGE_NAME:  Windows.UI.Xaml.dll
+
+BUCKET_ID_IMAGE_STR:  Windows.UI.Xaml.dll
+
+FAILURE_MODULE_NAME:  Windows_UI_Xaml
+
+BUCKET_ID_MODULE_STR:  Windows_UI_Xaml
+
+FAILURE_FUNCTION_NAME:  ctl::ComObject_DirectUI::CustomXamlResourceLoader_::AddRef
+
+BUCKET_ID_FUNCTION_STR:  ctl::ComObject_DirectUI::CustomXamlResourceLoader_::AddRef
+
+BUCKET_ID_OFFSET:  f
+
+BUCKET_ID_MODTIMEDATESTAMP:  0
+
+BUCKET_ID_MODCHECKSUM:  105f236
+
+BUCKET_ID_MODVER_STR:  10.0.16299.785
+
+BUCKET_ID_PREFIX_STR:  APPLICATION_FAULT_INVALID_POINTER_READ_ONE_BIT_
+
+FAILURE_PROBLEM_CLASS:  APPLICATION_FAULT
+
+FAILURE_SYMBOL_NAME:  Windows.UI.Xaml.dll!ctl::ComObject_DirectUI::CustomXamlResourceLoader_::AddRef
+
+WATSON_STAGEONE_URL:  http://watson.microsoft.com/StageOne/OperationsCenter.UWP.exe/1.0.0.0/5c6e95ec/Windows.UI.Xaml.dll/10.0.16299.785/e6cb46c8/c0000005/0008445f.htm?Retriage=1
+
+TARGET_TIME:  2019-03-05T12:23:25.000Z
+
+OSBUILD:  16299
+
+OSSERVICEPACK:  431
+
+SERVICEPACK_NUMBER: 0
+
+OS_REVISION: 0
+
+OSPLATFORM_TYPE:  x64
+
+OSNAME:  Windows 10
+
+OSEDITION:  Windows 10 WinNt SingleUserTS
+
+USER_LCID:  0
+
+OSBUILD_TIMESTAMP:  1995-11-07 20:08:04
+
+BUILDDATESTAMP_STR:  180808-1748
+
+BUILDLAB_STR:  rs3_release_svc
+
+BUILDOSVER_STR:  10.0.16299.637.amd64fre.rs3_release_svc.180808-1748
+
+ANALYSIS_SESSION_ELAPSED_TIME:  1f70
+
+ANALYSIS_SOURCE:  UM
+
+FAILURE_ID_HASH_STRING:  um:invalid_pointer_read_one_bit_c0000005_windows.ui.xaml.dll!ctl::comobject_directui::customxamlresourceloader_::addref
+
+FAILURE_ID_HASH:  {b1496798-3d22-cadd-53d5-554c2119cb77}
+
+Followup:     MachineOwner
+---------
+
